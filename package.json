@@ -1,5 +1,5 @@
 {
-  "name": "@m/optional",
+  "name": "@mdulowski/optional",
   "version": "1.0.0",
   "description": "Wrapper around nullable and undefined values",
   "scripts": {
