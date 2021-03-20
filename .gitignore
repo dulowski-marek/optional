@@ -1,5 +1,6 @@
 # artifacts
 build
+coverage
 
 # vendor
 node_modules
