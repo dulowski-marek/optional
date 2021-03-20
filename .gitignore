@@ -1,3 +1,6 @@
+# artifacts
+build
+
 # vendor
 node_modules
 
