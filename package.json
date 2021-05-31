@@ -1,6 +1,6 @@
 {
   "name": "@mdulowski/optional",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Wrapper around nullable and undefined values",
   "scripts": {
     "build": "yarn clean && tsc --outDir ./build",
