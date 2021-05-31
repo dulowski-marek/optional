@@ -45,6 +45,16 @@ export class Optional<T> {
         return this.value;
     }
 
+    public withValue(projectFn: (value: T) => void): Optional<T> {
+        if (this.value === null) {
+            return this;
+        }
+
+        projectFn(this.value);
+
+        return this;
+    }
+
     public hasValue(): boolean {
         return this.value !== null;
     }

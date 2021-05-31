@@ -171,4 +171,33 @@ describe(`Optional`, () => {
             expect(getResultValue).toThrow(SHOULD_HAVE_VALUE_ERROR);
         });
     });
+
+    describe(`withValue()`, () => {
+        test(`if full, call the function with value and return Optional`, () => {
+            // given
+            const originalValue = `originalValue`;
+            const fullOptional = Optional.of(originalValue);
+            const mockWithFn = jest.fn();
+
+            // when
+            const result = fullOptional.withValue(mockWithFn);
+
+            // then
+            expect(mockWithFn).toHaveBeenCalledWith(originalValue);
+            expect(result).toEqual(fullOptional);
+        });
+
+        test(`if empty, don't call the function and return Optional`, () => {
+            // given
+            const emptyOptional = Optional.empty();
+            const mockWithFn = jest.fn();
+
+            // when
+            const result = emptyOptional.withValue(mockWithFn);
+
+            // then
+            expect(mockWithFn).not.toHaveBeenCalled();
+            expect(result).toEqual(emptyOptional);
+        });
+    });
 });
