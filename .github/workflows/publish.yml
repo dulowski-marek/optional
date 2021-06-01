@@ -14,8 +14,6 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.TEST_NPM_TOKEN }}
       - name: install
         run: yarn install
       - name: test
@@ -23,7 +21,6 @@ jobs:
       - name: build
         run: yarn build
       - name: publish
-        run: |
-          cat $NPM_CONFIG_USERCONFIG
-          echo $NODE_AUTH_TOKEN
-          npm publish --access public
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.TEST_NPM_TOKEN }}
